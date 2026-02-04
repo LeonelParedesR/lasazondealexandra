@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="Imágenes/lasazon.png" type="image/png">
+<meta charset="UTF-8">
+<title>La Sazón de Alexandra</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Oswald',sans-serif;
+    color:white;
+    background: url("https://images.squarespace-cdn.com/content/v1/608b214921bfe530b1e7f160/34de2c66-85bd-48a9-8d3e-90d47c4ca071/organic-food-store-redding.jpg") center/cover no-repeat fixed;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.95);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:15px;
+    z-index:1000;
+    border-bottom:1px solid rgba(158,217,160,.3);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    letter-spacing:2px;
+    font-weight:500;
+}
+
+nav a:hover{color:#9ED9A0;}
+
+.hero-section{
+    min-height:90vh;
+    padding:130px 8% 80px;
+    position:relative;
+}
+
+.hero-main-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.hero-main-content h1{
+    font-size:78px;
+    color:#9ED9A0;
+    letter-spacing:5px;
+}
+
+.divider{
+    width:120px;
+    height:3px;
+    background:#9ED9A0;
+    margin:20px auto;
+}
+
+.hero-slogan{
+    font-size:26px;
+    font-style:italic;
+}
+
+.hero-extra{
+    max-width:1300px;
+    margin:60px auto 0;
+    display:flex;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-text{
+    width:50%;
+    background:#0d0d0d;
+    padding:50px;
+    border-radius:30px;
+    border-left:6px solid #9ED9A0;
+}
+
+.hero-text h2{
+    color:#9ED9A0;
+    font-size:38px;
+}
+
+.hero-text p{
+    margin-top:22px;
+    font-size:20px;
+    line-height:1.9;
+}
+
+.slider{
+    width:50%;
+    height:420px;
+    overflow:hidden;
+    border-radius:30px;
+    border:3px solid rgba(158,217,160,.4);
+}
+
+.slider-track{
+    display:flex;
+    height:100%;
+    width:100%;
+    animation:slide 25s infinite;
+}
+
+.slider-track img{
+    flex: 0 0 100%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes slide{
+    0%,20%{transform:translateX(0);}
+    25%,40%{transform:translateX(-100%);}
+    45%,60%{transform:translateX(-200%);}
+    65%,80%{transform:translateX(-300%);}
+    85%,100%{transform:translateX(-400%);}
+}
+
+section{
+    border-radius:20px;
+    margin-bottom:40px;
+    padding:40px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:46px;
+    color:#9ED9A0;
+}
+
+.section-divider{
+    width:140px;
+    height:3px;
+    background:#9ED9A0;
+    margin:25px auto 55px;
+}
+
+.menu-box{
+    max-width:900px;
+    margin:auto;
+}
+
+.menu-categoria{
+    background:#0d0d0d;
+    padding:35px;
+    border-radius:26px;
+    margin-bottom:40px;
+}
+
+.menu-categoria h3{
+    text-align:center;
+    font-size:30px;
+    border-bottom:2px solid #9ED9A0;
+    display:inline-block;
+    margin-bottom:25px;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px dashed rgba(158,217,160,.4);
+    font-size:20px;
+}
+
+.menu-item span{color:#9ED9A0;}
+
+.menu-detail img{
+    max-width:150px;
+    border-radius:8px;
+}
+
+.menu-detail p{
+    margin:0;
+}
+
+#contacto{text-align:center;}
+
+.contacto-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.contacto-box{
+    background:#0b0b0b;
+    padding:35px;
+    border-radius:24px;
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.contacto-box h3{
+    color:#9ED9A0;
+    margin-bottom:12px;
+}
+
+.contacto-box a{
+    color:#9ED9A0;
+    text-decoration:none;
+}
+
+.contacto-horario{
+    margin-top:45px;
+    font-size:21px;
+   font-style:italic;
+    text-align:center;
+}
+
+.contacto-form{
+    max-width:700px;
+    margin:70px auto 0;
+    background:#0b0b0b;
+    padding:45px;
+    border-radius:28px;
+    border:2px solid rgba(158,217,160,.35);
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.contacto-form h3{
+    color:#9ED9A0;
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+.contacto-form form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.contacto-form input,
+.contacto-form textarea{
+    background:#000;
+    border:1px solid rgba(158,217,160,.4);
+    padding:16px;
+    font-size:18px;
+    color:white;
+    border-radius:14px;
+}
+
+.contacto-form textarea{
+    min-height:130px;
+    resize:none;
+}
+
+.contacto-form button{
+    padding:15px;
+    background:#9ED9A0;
+    color:#000;
+    border:none;
+    border-radius:18px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contacto-form button:hover{
+    background:#baf0bc;
+}
+#contacto iframe{
+    width:100%;
+    height:380px;
+    border-radius:25px;
+    border:3px solid rgba(158,217,160,.35);
+}
+.mapa-contacto{
+    max-width:1000px;
+    margin:100px auto 0;
+    }
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(158,217,160,.4);
+    font-size: 20px;
+    position: relative; 
+    cursor: pointer;
+}
+
+.menu-detail {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.menu-detail.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.menu-detail img {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.menu-detail p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+.ordenar-texto{
+    max-width:800px;
+    margin:0 auto 40px;
+    text-align:center;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.autores-imagenes{
+    display: flex;
+    flex-direction: column;   
+    gap: 20px;
+    align-items: center;
+    margin-left: 120px;
+    margin-top: 60px; 
+}
+.autores-imagenes img{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid rgba(158,217,160,.4);
+    box-shadow: 0 6px 15px rgba(0,0,0,.6);
+}
+
+.autores-contenido{
+    max-width:1300px;
+    margin:0 auto;
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+}
+#autores .hero-text{
+    width:380px;
+    padding:30px;
+    background:#0d0d0d;
+    border-radius:30px;
+    border-left:6px solid #9ED9A0;
+}
+
+#autores .hero-text p{
+    font-size:15.5px;
+    line-height:1.6;
+    text-align:left;
+}
+
+#autores .hero-text h2{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+#autores .hero-text h3{
+    font-size:18px;
+    margin-top:12px;
+}
+
+</style>
+</head>
+<body>
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#menu">Menú</a>
+    <a href="#ordenar">Ordenar</a>
+    <a href="#autores">Autores</a>
+    <a href="#contacto">Contacto</a>
+
+</nav>
+
+<div class="hero-section" id="inicio">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-main-content">
+        <h1>La Sazón de Alexandra</h1>
+        <div class="divider"></div>
+        <p class="hero-slogan">Cocinar con amor te alimenta el alma</p>
+    </div>
+
+    <div class="hero-extra">
+        <div class="hero-text">
+            <h2>Más de nosotros</h2>
+            <div class="divider"></div>
+            <p>
+                La Sazón de Alexandra nace como un emprendimiento familiar,
+                inspirado en la tradición de la cocina ecuatoriana y el amor
+                por la comida casera. Cada plato refleja dedicación,
+                ingredientes frescos y el auténtico sabor del hogar.
+                <br><br>
+                Nuestro objetivo es que cada cliente disfrute no solo de una
+                comida deliciosa, sino también de un ambiente cálido,
+                acogedor y lleno de tradición.
+            </p>
+        </div>
+
+        <div class="slider">
+            <div class="slider-track">
+                <img src="https://comidaecuatoriana.com.es/wp-content/uploads/2020/04/seco-ecuatoriano.jpg">
+                <img src="https://recetaskwa.com/wp-content/uploads/2024/12/Guatita-web-3-1.jpg">
+                <img src="https://www.comedera.com/wp-content/uploads/2022/08/Seco-de-carne-ecuatoriano-shutterstock_1073855981.jpg">
+                <img src="https://www.eluniverso.com/resizer/O0nXk5VCkVuj62DAhor-zlhm3gI=/1005x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/B77EV6C4NNGAZKN2XQIRT6OJQQ.jpg">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/13/9d/db/34/pollo-con-tajadas.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="menu">
+<h2>MENÚ</h2>
+<div class="section-divider"></div>
+
+<div class="menu-box">
+    <div class="menu-categoria">
+        <h3>ENTRADA</h3>
+        <div class="menu-item">Caldo de Gallina <span>$1.25</span></div>
+        <div class="menu-item">Sopa de Queso <span>$1.25</span></div>
+        <div class="menu-item">Menestrón <span>$1.25</span></div>
+        <div class="menu-item">Sopa de Pollo <span>$1.25</span></div>
+        <div class="menu-item">Sopa de Alberja <span>$1.25</span></div>
+    </div>
+
+    <div class="menu-categoria">
+        <h3>PLATO PRINCIPAL</h3>
+        <div class="menu-item">Seco de Pollo <span>$1.50</span></div>
+        <div class="menu-item">Guatita <span>$1.50</span></div>
+        <div class="menu-item">Seco de Costilla <span>$1.50</span></div>
+        <div class="menu-item">Lengua Guisada <span>$1.50</span></div>
+        <div class="menu-item">Bistec de Costilla <span>$1.50</span></div>
+        <div class="menu-item">Fritada <span>$1.50</span></div>
+        <div class="menu-item">Pollo Apanado <span>$1.50</span></div>
+    </div>
+
+    <div class="menu-categoria">
+        <h3>BEBIDAS</h3>
+        <div class="menu-item">Agua Aromática <span>$1.00</span></div>
+        <div class="menu-item">Cuaker <span>$0.50</span></div>
+        <div class="menu-item">Café <span>$0.50</span></div>
+        <div class="menu-item">Colas <span>$0.75</span></div>
+    </div>
+</div>
+</section>
+
+<section id="ordenar">
+<h2>ORDENAR AQUÍ</h2>
+<div class="section-divider"></div>
+
+<p class="ordenar-texto">
+Aquí puedes realizar tu pedido fácilmente.  
+Escríbenos por WhatsApp y te responderemos lo antes posible.
+</p>
+
+<p class="contacto-horario">
+Horario: Lunes a Viernes · 05:30 AM – 17:00 PM
+</p>
+
+<div class="contacto-form">
+    <h3>Haz tu pedido</h3>
+    <form onsubmit="enviarWhatsApp(event)">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <textarea id="mensaje" placeholder="Escribe tu mensaje o pedido" required></textarea>
+        <button type="submit">ENVIAR POR WHATSAPP</button>
+    </form>
+</div>
+</section>
+<section id="autores">
+    <h2>AUTORES</h2>
+    <div class="section-divider"></div>
+
+    <div class="autores-contenido">
+
+        <div class="hero-text">
+            <h2>Sobre el proyecto</h2>
+            <div class="divider"></div>
+
+            <p>
+                Esta página web fue desarrollada como proyecto de grado
+                de tercer año de bachillerato en la especialidad de
+                <strong>Informática</strong> del colegio
+                <strong>“Ismael Pérez Pazmiño”</strong>.
+                <br><br>
+                Su objetivo es apoyar a un emprendimiento de comida,
+                brindándole presencia digital mediante un sitio web
+                informativo y fácil de usar.
+                <br><br>
+                Para su desarrollo se utilizaron
+                <strong>HTML, CSS y JavaScript</strong>.
+            </p>
+
+            <h3>Autores del proyecto</h3>
+            <ul class="autores-lista">
+                <li>Leonel Mateo Paredes Romero</li>
+                <li>Anahi Estefania Campoverde Aguilar</li>
+                <li>Alejandro José Hidalgo Cabrera</li>
+            </ul>
+        </div>
+
+        <div class="autores-imagenes">
+            <img src="Imágenes/leonel.jpeg" alt="Leonel">
+            <img src="Imágenes/anahi.jpeg" alt="Anahi">
+            <img src="Imágenes/alejandro.jpeg" alt="Alejandro">
+        </div>
+
+    </div>
+</section>
+
+<section id="contacto">
+<h2>CONTACTO</h2>
+<div class="section-divider"></div>
+
+<div class="contacto-container">
+    <div class="contacto-box">
+        <h3>Correo</h3>
+        <a href="mailto:naisitacampoverdeaguilar@gmail.com">
+        naisitacampoverdeaguilar@gmail.com</a>
+    </div>
+
+    <div class="contacto-box">
+        <h3>Teléfono</h3>
+        <a href="tel:0982779982">098 277 9982</a>
+    </div>
+
+    <div class="contacto-box">
+        <h3>Dirección</h3>
+        <p>Av. Alejandro Castro Benítez<br>Vía Pajonal</p>
+    </div>
+</div>
+<div class="mapa-contacto">
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d402.84646355517655!2d-79.944813!3d-3.280957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1705800000000">
+    </iframe>
+</div>
+</section>
+
+<script src="menu.js"></script>
+<script src="slider.js"></script>
+<script src="whatsapp.js"></script>
+
+</body>
+</html>
